@@ -3,10 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+            xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Name="myMainWindow"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="ButtonRoundedCorner" TargetType="Button">
+            <Setter Property="Background" Value="Silver"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="25" Background="{TemplateBinding Background}" BorderThickness="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged">
         <Grid.LayoutTransform>
             <ScaleTransform x:Name="ApplicationScaleTransform"
@@ -16,18 +32,20 @@
                         ScaleY="{Binding ElementName=myMainWindow, Path=ScaleValue}" />
         </Grid.LayoutTransform>
         <Grid.RowDefinitions>
-            <RowDefinition Height="57*"/>
-            <RowDefinition Height="86*"/>
-            <RowDefinition Height="229*"/>
-            <RowDefinition Height="62*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle  Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" RadiusX="15" RadiusY="15">
+        <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="3" RadiusX="15" RadiusY="15" Margin="0,0,0,0" Grid.Row="1" Grid.Column="1">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                     <GradientStop Color="Red" Offset="0.0" />
@@ -38,17 +56,19 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox x:Name="RedFighterName" TextWrapping="Wrap" Text="Красный Боец"   FontSize="36" Grid.Row="1" Grid.Column="1" Margin="10,15,10,15"/>
-        <TextBox x:Name="BlueFighterName" TextWrapping="Wrap" Text="Синий Боец"  FontSize="36" Grid.Column="2" Grid.Row="1" Margin="10,15,10,15"/>
-        <Separator Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top"/>
-        <TextBox x:Name="redFighterPointsCounter" HorizontalAlignment="Left" Margin="20,17,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" Height="55" FontSize="36" TextAlignment="Center" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="NullerRed" Content="0" HorizontalAlignment="Left" Margin="193,17,0,0" VerticalAlignment="Top" FontSize="36" Width="42" Height="55" Grid.Row="2" Grid.Column="1"/>
-        <TextBox x:Name="blueFighterPointsCounter" HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="175" Height="55" FontSize="36" TextAlignment="Center" Grid.Column="2" Grid.Row="2"/>
-        <Button x:Name="NullerBlue" Content="0" Margin="268,20,0,0" VerticalAlignment="Top" FontSize="36" Height="55" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Width="42"/>
-        <Button x:Name="AddPointToRed" Content="+1" HorizontalAlignment="Left" Margin="249,0,0,157" VerticalAlignment="Bottom" Width="55" Height="55" FontSize="36" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="RemovePointFromRed" Content="-1" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Width="56" Height="55" FontSize="36" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="AddPointToBlue" Content="+1" HorizontalAlignment="Left" Margin="129,91,0,0" VerticalAlignment="Top" Width="56" Height="55" FontSize="36" Grid.Column="2" Grid.Row="2"/>
-        <Button x:Name="RemovePointFromBlue" Content="-1" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="54" RenderTransformOrigin="1.036,-0.327" Height="55" FontSize="36" Grid.Column="2" Grid.Row="2"/>
+        <TextBox x:Name="RedFighterName" TextWrapping="Wrap" Text="Красный Боец"   FontSize="36" Grid.Row="1" Grid.Column="1" Margin="10,15,10,15" />
+        <TextBox x:Name="BlueFighterName" TextWrapping="Wrap" Text="Синий Боец"  FontSize="36" Grid.Column="3" Grid.Row="1" Margin="10,15,10,15"/>
+        <Separator Grid.ColumnSpan="5" Grid.Row="2" VerticalAlignment="Top" Margin="44,2,44,0" Height="1"/>
+        <TextBox x:Name="redFighterPointsCounter" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="100" Height="55" FontSize="36" TextAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="NullerRed" Content="0" HorizontalAlignment="Left" Margin="200,0,0,0" VerticalAlignment="Center" FontSize="36" Width="42" Height="55" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="blueFighterPointsCounter" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="100" Height="55" FontSize="36" TextAlignment="Center" Grid.Column="3" Grid.Row="2"/>
+        <Button x:Name="NullerBlue" Content="0" Margin="200,0,0,0" VerticalAlignment="Center" FontSize="36" Height="55" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Width="42"/>
+        <Button x:Name="AddPointToRed" Content="+1" HorizontalAlignment="Left" Margin="255,0,0,0" VerticalAlignment="Center" Width="55" Height="55" FontSize="36" Grid.Row="2" Grid.Column="1" RenderTransformOrigin="0.491,-0.029"/>
+        <Button x:Name="RemovePointFromRed" Content="-1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="56" Height="55" FontSize="36" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="AddPointToBlue" Content="+1" HorizontalAlignment="Left" Margin="252,0,0,0" VerticalAlignment="Center" Width="55" Height="55" FontSize="36" Grid.Column="3" Grid.Row="2"/>
+        <Button x:Name="RemovePointFromBlue" Content="-1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="55" RenderTransformOrigin="1.036,-0.327" Height="55" FontSize="36" Grid.Column="3" Grid.Row="2"/>
+        <Label Grid.Column="2" Content="HP" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="55" Width="60" FontSize="36" Foreground="White" />
+        <Label Grid.Column="1" Grid.ColumnSpan="3" Content="Предупреждения" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="White" FontSize="36"/>
 
 
     </Grid>

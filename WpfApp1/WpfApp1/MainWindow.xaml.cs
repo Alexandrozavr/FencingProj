@@ -52,7 +52,7 @@ namespace WpfApp1
             get => (double)GetValue(ScaleValueProperty);
             set => SetValue(ScaleValueProperty, value);
         }
-        #endregion
+        
         private void MainGrid_SizeChanged(object sender, EventArgs e) => CalculateScale();
         private void CalculateScale()
         {
@@ -61,5 +61,6 @@ namespace WpfApp1
             double value = Math.Min(xScale, yScale);
             ScaleValue = (double)OnCoerceScaleValue(myMainWindow, value);
         }
+        #endregion
     }
 }
