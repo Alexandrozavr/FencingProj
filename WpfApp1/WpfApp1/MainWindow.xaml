@@ -69,15 +69,17 @@
         <Button x:Name="RemovePointFromBlue" Content="-1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="55" RenderTransformOrigin="1.036,-0.327" Height="55" FontSize="36" Grid.Column="3" Grid.Row="2" Click="RemovePointFromBlue_Click"/>
         <Label Grid.Column="2" Content="HP" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="55" Width="60" FontSize="36" Foreground="White" />
         <Label Grid.Column="1" Grid.ColumnSpan="3" Content="Предупреждения" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Foreground="White" FontSize="36"/>
-        <Button Grid.Column="1" Grid.Row="3" x:Name="RemoveAlertRed" Content="-1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="RemoveAlertRed_Click"/>
+        <Button Grid.Column="1" Grid.Row="3" x:Name="RemoveAlertRed" Content="-1" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="RemoveAlertRed_Click"/>
         <TextBox Grid.Column="1" Grid.Row="3" x:Name="AlertsRed" TextAlignment="Center" Text="0" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Center" Height="55" Width="42"  FontSize="36"/>
-        <Button Grid.Column="1" Grid.Row="3" x:Name="AddAlertRed" Content="+1" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="AddAlertRed_Click"/>
-        <Button Grid.Column="3" Grid.Row="3" x:Name="RemoveAlertBlue" Content="-1" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="RemoveAlertBlue_Click"/>
+        <Button Grid.Column="1" Grid.Row="3" x:Name="AddAlertRed" Content="+1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="AddAlertRed_Click"/>
+        <Button Grid.Column="3" Grid.Row="3" x:Name="RemoveAlertBlue" Content="-1" HorizontalAlignment="Right" Margin="0,0,140,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="RemoveAlertBlue_Click"/>
         <TextBox Grid.Column="3" Grid.Row="3" x:Name="AlertsBlue" TextAlignment="Center" Text="0" HorizontalAlignment="Right" Margin="0,0,80,0" VerticalAlignment="Center" Height="55" Width="42"  FontSize="36"/>
-        <Button Grid.Column="3" Grid.Row="3" x:Name="AddAlertBlue" Content="+1" HorizontalAlignment="Right" Margin="0,0,140,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="AddAlertBlue_Click"/>
+        <Button Grid.Column="3" Grid.Row="3" x:Name="AddAlertBlue" Content="+1" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="55" Width="55"  FontSize="36" Click="AddAlertBlue_Click"/>
         <Label x:Name="Timer" Grid.Column="2"  HorizontalAlignment="Center" Content="1:30" VerticalAlignment="Center" Width="70"  FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1"/>
-        <Button Grid.Column="1" Content="TimerSwitch" HorizontalAlignment="Left" Margin="245,30,0,0" VerticalAlignment="Top" Click="StartTimer_Click" Height="18"/>
-
+        <Button x:Name="TimerSwitch" Grid.Column="1" Content="▶️" HorizontalAlignment="Left" Margin="260,0,0,0" VerticalAlignment="Center" Click="StartTimer_Click" Height="38" Width="50" FontSize="24"/>
+        <TextBox Grid.Column="3" HorizontalAlignment="Center" Text="TextBox" Width="122" Height="40" FontSize="24" VerticalAlignment="Center"/>
+        <Button Grid.Column="3" Content="-" HorizontalAlignment="Left" Margin="30,10,0,10" Width="46" VerticalAlignment="Center" FontSize="15" VerticalContentAlignment="Center"/>
+        <Button Grid.Column="3" Content="добавить" HorizontalAlignment="Left" Margin="226,11,0,0" VerticalAlignment="Top" FontSize="24" VerticalContentAlignment="Stretch" Padding="1,1,1,10"/>
 
     </Grid>
 </Window>

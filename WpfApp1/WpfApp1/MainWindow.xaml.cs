@@ -40,11 +40,13 @@ namespace WpfApp1
             if (timerStarted) 
             {
                 timer.Stop();
+                TimerSwitch.Content = "▶️";
                 timerStarted = false;                
             }
             else
             {
                 timerStarted = true;
+                TimerSwitch.Content = "⏸";
                 timer.Start();
             }
         }
@@ -158,10 +160,6 @@ namespace WpfApp1
             RedFighterPointsCounter.Text = (pointsValue + 1).ToString();
         }
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }
