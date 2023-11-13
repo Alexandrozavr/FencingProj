@@ -21,8 +21,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        TimeSpan timeSpan;
-        bool timerStarted = false;
+        private TimeSpan timeSpan;
+        private bool timerOn = false;
 
         private DispatcherTimer timer;
         public MainWindow()
@@ -38,15 +38,15 @@ namespace WpfApp1
 
         private void StartTimer_Click(object sender, RoutedEventArgs e)
         {            
-            if (timerStarted) 
+            if (timerOn) 
             {
                 timer.Stop();
                 TimerSwitch.Content = "▶️";
-                timerStarted = false;                
+                timerOn = false;                
             }
             else
             {
-                timerStarted = true;
+                timerOn = true;
                 TimerSwitch.Content = "⏸";
                 timer.Start();
             }
@@ -160,18 +160,6 @@ namespace WpfApp1
             _ = int.TryParse(RedFighterPointsCounter.Text, out int pointsValue);
             RedFighterPointsCounter.Text = (pointsValue + 1).ToString();
         }
-        #endregion
-
-        private void SubstractTime_Click(object sender, RoutedEventArgs e)
-        {
-            timeSpan -= new TimeSpan(0, 0, int.Parse(TimerChangeValue.Text));
-            Timer.Content = timeSpan.ToString(@"mm\:ss");
-        }
-
-        private void AddTime_Click(object sender, RoutedEventArgs e)
-        {
-            timeSpan += new TimeSpan(0, 0, int.Parse(TimerChangeValue.Text));
-            Timer.Content = timeSpan.ToString(@"mm\:ss");
-        }
+        #endregion        
     }
 }
