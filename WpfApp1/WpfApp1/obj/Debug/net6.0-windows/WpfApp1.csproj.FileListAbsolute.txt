@@ -42,3 +42,5 @@ C:\Users\User\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\
 C:\Users\User\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.pdb
 C:\Users\User\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.genruntimeconfig.cache
 C:\Users\User\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ref\WpfApp1.dll
+C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ShowingWindow.g.cs
+C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Debug\net6.0-windows\ShowingWindow.baml

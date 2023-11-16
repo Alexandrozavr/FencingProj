@@ -7,4 +7,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="logo-mws.png" />
+    <None Remove="reset.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo-mws.png" />
+    <Resource Include="reset.png" />
+  </ItemGroup>
+
 </Project>
