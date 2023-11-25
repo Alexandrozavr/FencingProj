@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,9 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private TimeSpan timerValue;
+        private TimeSpan mainTimer;
         private TimeSpan timerStandart = new(0,1,30);
+        private DateTime lastTimeCheck;
         private bool timerOn;
         private bool redOnLeft;
 
@@ -31,22 +33,27 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            timerValue = timerStandart;
+            mainTimer = timerStandart;
             timer = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, 1)
+                Interval = new TimeSpan(0, 0, 0, 0, 10)
             };
             timer.Tick += Timer_Tick;
             redOnLeft = true;
             timerOn = false;
+            lastTimeCheck = DateTime.Now;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
-        {
-            timerValue -= new TimeSpan(0, 0, 1);
-            if (timerValue == new TimeSpan(0, 0, 0))
+        {            
+
+            mainTimer -= DateTime.Now - lastTimeCheck;
+            lastTimeCheck = DateTime.Now;            
+            if (mainTimer <= new TimeSpan(0, 0, 0, 0, 100))
             {
                 timer.Stop();
+                TimerSwitch.Content = "▶️";
+                timerOn = false;
             }
             UpdateTimer();
         }
@@ -165,34 +172,40 @@ namespace WpfApp1
         private void StartTimer_Click(object sender, RoutedEventArgs e)
         {
             if (timerOn)
+            // остановка
             {
                 timer.Stop();
+                mainTimer -= DateTime.Now - lastTimeCheck;
+                lastTimeCheck = DateTime.Now;
+                UpdateTimer();
                 TimerSwitch.Content = "▶️";
                 timerOn = false;
             }
             else
+            // включение
             {
                 timerOn = true;
                 TimerSwitch.Content = "⏸";
                 timer.Start();
+                lastTimeCheck = DateTime.Now;
             }
         }
 
         private void SubstractTime_Click(object sender, RoutedEventArgs e)
         {
-            timerValue -= new TimeSpan(0, 0, 1);
+            mainTimer -= new TimeSpan(0, 0, 1);
             UpdateTimer();
         }
 
         private void AddTime_Click(object sender, RoutedEventArgs e)
         {
-            timerValue += new TimeSpan(0, 0, 1);
+            mainTimer += new TimeSpan(0, 0, 1);
             UpdateTimer();
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-            timerValue = timerStandart;
+            mainTimer = timerStandart;
             UpdateTimer();
             timer.Stop();
             TimerSwitch.Content = "▶️";
@@ -211,7 +224,7 @@ namespace WpfApp1
                 if (Timer.Text.Length == 4)
                 {
                     timerStandart = new TimeSpan(0, int.Parse(Timer.Text[..2]), int.Parse(Timer.Text[2..]));
-                    timerValue = timerStandart;
+                    mainTimer = timerStandart;
                     UpdateTimer();
                 }
             }
@@ -232,6 +245,11 @@ namespace WpfApp1
         {
             _ = int.TryParse(OboydkiCounter.Text, out int value);
             OboydkiCounter.Text = (value - 1).ToString();
+            UpdateOboydki();
+        }
+
+        private void OboydkiCounter_TextChanged(object sender, TextChangedEventArgs e)
+        {
             UpdateOboydki();
         }
         #endregion
@@ -305,7 +323,7 @@ namespace WpfApp1
 
             try
             {
-                Timer.Text = timerValue.ToString(@"mm\:ss");
+                Timer.Text = mainTimer.ToString(@"mm\:ss");
                 TextBlock? showingWindow = OwnedWindows[0].FindName("Timer") as TextBlock;
                 showingWindow.Text = Timer.Text;
             }
@@ -350,7 +368,7 @@ namespace WpfApp1
                 LeftFighterPointsCounter.Text, RightFighterPointsCounter.Text,
                 Rectangle.Fill, OboydkiCounter.Text);
             showingWindow.Owner = this;
-            showingWindow.Show();
-        }        
+            showingWindow.Show();            
+        }
     }
 }
