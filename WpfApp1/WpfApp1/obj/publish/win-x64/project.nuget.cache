@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ytoxYpsu54PRpPiGPEfc3feIsLN5mCy6Z7Aq7OqfjjnkmaJIC8p9pkCgPSLNYoA8bTzIVlX/k9F2V6shbAhsiA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alexandr\\source\\repos\\FencingProj\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alexandr\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.20\\microsoft.netcore.app.runtime.win-x64.6.0.20.nupkg.sha512",
+    "C:\\Users\\Alexandr\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.20\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.20.nupkg.sha512",
+    "C:\\Users\\Alexandr\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.20\\microsoft.aspnetcore.app.runtime.win-x64.6.0.20.nupkg.sha512",
+    "C:\\Users\\Alexandr\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.20\\microsoft.netcore.app.crossgen2.win-x64.6.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

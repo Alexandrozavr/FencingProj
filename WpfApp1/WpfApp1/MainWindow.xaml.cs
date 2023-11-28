@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -144,6 +145,11 @@ namespace WpfApp1
             RightFighterPointsCounter.Text = (pointsValue + 1).ToString();
             UpdateRightPoints();
         }
+
+        private void RightFighterPointsCounter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateRightPoints();
+        }
         #endregion
 
         #region счётчик левого
@@ -164,6 +170,11 @@ namespace WpfApp1
         {
             _ = int.TryParse(LeftFighterPointsCounter.Text, out int pointsValue);
             LeftFighterPointsCounter.Text = (pointsValue + 1).ToString();
+            UpdateLeftPoints();
+        }
+
+        private void LeftFighterPointsCounter_TextChanged(object sender, TextChangedEventArgs e)
+        {
             UpdateLeftPoints();
         }
         #endregion
@@ -370,5 +381,6 @@ namespace WpfApp1
             showingWindow.Owner = this;
             showingWindow.Show();            
         }
+
     }
 }

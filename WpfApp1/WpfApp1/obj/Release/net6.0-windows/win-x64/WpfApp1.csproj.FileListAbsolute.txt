@@ -515,10 +515,10 @@ C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-wi
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.AssemblyInfoInputs.cache
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.AssemblyInfo.cs
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.csproj.CoreCompileInputs.cache
-C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.sourcelink.json
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.csproj.CopyComplete
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.dll
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\refint\WpfApp1.dll
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.pdb
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.genruntimeconfig.cache
 C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\ref\WpfApp1.dll
+C:\Users\Alexandr\source\repos\FencingProj\WpfApp1\WpfApp1\obj\Release\net6.0-windows\win-x64\WpfApp1.csproj.AssemblyReference.cache
